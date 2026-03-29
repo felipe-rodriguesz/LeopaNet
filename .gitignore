@@ -1,0 +1,19 @@
+# Ambientes Virtuais e Cache
+.venv/
+venv/
+env/
+__pycache__/
+.ipynb_checkpoints/
+
+# Segredos
+.env
+
+# Arquivos de Sistema
+.DS_Store
+Thumbs.db
+
+# Modelos e Dados
+*.task
+*.tflite
+*.csv
+*.pkl
