@@ -6,7 +6,7 @@ Bem-vindo ao repositório do projeto **NLW Operator Visão Computacional**. Este
 
 ## 📂 Estrutura do Projeto
 
-Este monorepo está dividido em três módulos principais, um para cada aula:
+Este monorepo está dividido em três módulos principais:
 
 ### 1. [🧠 LeNet-5 MNIST](./lenet)
 Uma implementação moderna da clássica arquitetura **LeNet-5** utilizando **PyTorch** para classificação de dígitos manuscritos.
