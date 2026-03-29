@@ -1,7 +1,7 @@
 # 🚀 Rockit Vision — Reconhecimento de Gestos com IA em Tempo Real
 
 [![Rockit Vision Logo](https://img.shields.io/badge/Rockit_Vision-Hand%20Gesture%20Recognition-blue?style=for-the-badge&logo=mediamarkt)](https://github.com/athk/nlw-2026-computer-vision)
-![Versão do Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Versão do Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![FastHTML](https://img.shields.io/badge/FastHTML-Web%20App-000000?style=for-the-badge&logo=fastapi)
 
 **Rockit Vision** é um sistema de reconhecimento de gestos em alta performance e tempo real, construído utilizando **FastHTML**, **OpenCV** e **MediaPipe**. Ele utiliza modelos de ML customizados para identificar e visualizar gestos das mãos capturados diretamente pela webcam.
@@ -113,5 +113,5 @@ Este projeto faz parte da jornada **NLW Operator**. Sinta-se à vontade para usa
 
 ---
 
-*Feito com ❤️ durante a NLW @ Rocketseat*
+*Feito durante a NLW @ Rocketseat*
 

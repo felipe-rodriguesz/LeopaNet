@@ -1,6 +1,6 @@
 # 🧠 LeNet-5 — Classificação de Dígitos MNIST
 
-![Versão do Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Versão do Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 
@@ -45,8 +45,9 @@ O projeto oferece uma visão clara do que acontece "sob o capô" da rede:
 ```text
 lenet/
 ├── data/               # Dataset MNIST (baixado automaticamente)
-├── weights/            # Pesos do modelo treinado (.pth)
+├── leopanet_mnist.pth  # Pesos do modelo treinado
 ├── lenet5.ipynb        # Notebook principal com o código
+├── inferencia.py        # Script de demonstração de inferência
 ├── pyproject.toml      # Gerenciamento de dependências (uv)
 └── README.md           # Você está aqui!
 ```
@@ -73,7 +74,7 @@ O notebook guiará você por:
 2. Download e inspeção do MNIST.
 3. Ciclo de treinamento (5 épocas por padrão).
 4. Teste de acurácia.
-5. Exportação dos pesos para a pasta `weights`.
+5. Exportação dos pesos para o arquivo `leopanet_mnist.pth`.
 
 ---
 
@@ -82,5 +83,5 @@ O modelo treinado deve atingir uma acurácia superior a **98%** no conjunto de t
 
 ---
 
-*Feito com ❤️ durante a NLW @ Rocketseat*
+*Feito durante a NLW @ Rocketseat*
 

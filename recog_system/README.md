@@ -1,6 +1,6 @@
 # 🖐️ Sistema de Reconhecimento & Laboratório de Visão Computacional
 
-![Versão do Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Versão do Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-00C7B7?style=for-the-badge&logo=google&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
@@ -29,23 +29,19 @@ O coração deste projeto é um pipeline de ponta a ponta que permite coletar da
 
 ## 📽️ Pipeline de Reconhecimento de Gestos
 
-O fluxo de trabalho está dividido em três etapas principais:
+O fluxo de trabalho está dividido em etapas principais dentro de notebooks interativos:
 
-### 1. Coleta de Dados (`collect_landmarks.py`)
-Use este script para criar seu dataset customizado. Ele captura as coordenadas (x, y, z) dos 21 marcos da mão.
-- **Uso:** `python collect_landmarks.py --label seu_gesto`
-- **Comandos:** 
-  - `s`: Salva um único frame de marcos.
-  - `r`: Inicia/Para gravação contínua.
-  - `q`: Sai do programa.
+### 1. Coleta de Dados (`data_collection.ipynb`)
+Use este notebook para criar seu dataset customizado. Ele captura as coordenadas (x, y, z) dos 21 marcos da mão através da webcam.
+- **Funcionalidade:** Grava marcos extraídos via MediaPipe diretamente em um arquivo CSV.
 
-### 2. Treinamento do Modelo (`train_model.py`)
+### 2. Treinamento do Modelo (`train_gesture_model.ipynb`)
 Processa o arquivo `hand_landmarks_data.csv` gerado e treina um classificador `RandomForest`.
-- **Saída:** Gera `gesture_model.joblib` e `label_encoder.joblib`.
-- Avalia o modelo com relatórios de precisão, recall e F1-score.
+- **Saída:** Gera `gesture_model.pkl` e `label_encoder.pkl`.
+- Realiza avaliação de métricas (Matriz de Confusão, Precision/Recall).
 
-### 3. Reconhecimento em Tempo Real (`webcam_recog.py`)
-O script final que utiliza a webcam para detectar mãos e classificar gestos em tempo real usando o modelo treinado.
+### 3. Reconhecimento em Tempo Real
+A lógica de inferência em tempo real é explorada no notebook `mediapipe_object_detection.ipynb` (adaptado para gestos) e serve de base para a aplicação web principal.
 
 ---
 
@@ -53,10 +49,11 @@ O script final que utiliza a webcam para detectar mãos e classificar gestos em 
 
 Além do sistema de gestos, o repositório inclui implementações de ponta para outras subáreas da Visão Computacional:
 
-- **`classifier_timm.ipynb`**: Classificação de imagens usando a biblioteca `timm` (MobileNetV3).
-- **`detection_yolos.ipynb`**: Detecção de objetos utilizando o modelo YOLO-S do Hugging Face.
-- **`segmentation_clipseg.ipynb`**: Segmentação de imagem baseada em texto com CLIPSeg.
-- **`gemini_vision.ipynb`**: Integração com a API do Google Gemini para análise multimodal de imagens.
+- **`timm_classification_test.ipynb`**: Classificação de imagens usando a biblioteca `timm` (MobileNetV3).
+- **`yolos_detection_test.ipynb`**: Detecção de objetos utilizando o modelo YOLO-S do Hugging Face.
+- **`clipseg_segmentation.ipynb`**: Segmentação de imagem baseada em texto com CLIPSeg.
+- **`gemini_vision_test.ipynb`**: Integração com a API do Google Gemini para análise multimodal de imagens.
+- **`mediapipe_object_detection.ipynb`**: Implementação base para detecção de marcas e objetos via MediaPipe.
 
 ---
 
@@ -86,17 +83,17 @@ Para garantir que o sistema funcione, baixe os modelos pré-treinados do MediaPi
 
 ```text
 recog_system/
-├── collect_landmarks.py    # Ferramenta de criação de dataset
-├── train_model.py          # Script de treinamento de ML
-├── webcam_recog.py         # Script de inferência em tempo real
-├── classifier_timm.ipynb   # Exploração MobileNetV3
-├── detection_yolos.ipynb   # Exploração YOLO-S
-├── segmentation_clipseg.ipynb # Exploração CLIPSeg
-├── gemini_vision.ipynb      # Exploração Google Gemini
+├── data_collection.ipynb    # Ferramenta de criação de dataset
+├── train_gesture_model.ipynb # Notebook de treinamento de ML
+├── timm_classification_test.ipynb # Exploração MobileNetV3
+├── yolos_detection_test.ipynb # Exploração YOLO-S
+├── clipseg_segmentation.ipynb # Exploração CLIPSeg
+├── gemini_vision_test.ipynb # Exploração Google Gemini
+├── mediapipe_object_detection.ipynb # Detecção MediaPipe
 ├── pyproject.toml          # Metadados e dependências
 └── README.md               # Você está aqui!
 ```
 
 ---
 
-*Feito com ❤️ durante a NLW @ Rocketseat*
+*Feito durante a NLW @ Rocketseat*
