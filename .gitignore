@@ -7,6 +7,7 @@ __pycache__/
 
 # Segredos
 .env
+computer_vision_app/.sesskey
 
 # Arquivos de Sistema
 .DS_Store
